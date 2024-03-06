@@ -1,0 +1,46 @@
+{
+    "name": "@onivoro/server-puppeteer",
+    "version": "0.0.1",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "files": [
+        "dist/*"
+    ],
+    "scripts": {
+        "onx": "onx",
+        "build": "onx Build",
+        "deploy": "onx Publish",
+        "test": "onx Test",
+        "update": "onx Update"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js",
+            "default": "./dist/esm/lib.js"
+        }
+    },
+    "onx": {
+        "platform": "server"
+    },
+    "devDependencies": {
+        "@onivoro/cli": "*",
+        "@types/jest": "*",
+        "@types/node": "18.19.1",
+        "typescript": "*"
+    },
+    "engines": {
+        "node": "18.19.1",
+        "npm": "10.2.4"
+    },
+    "dependencies": {
+        "@nestjs/common": "^10.3.3",
+        "@onivoro/server-common": "^0.0.23",
+        "puppeteer": "^22.4.0",
+        "puppeteer-core": "^22.4.0",
+        "puppeteer-extra": "^3.3.6",
+        "puppeteer-extra-plugin-stealth": "^2.11.2"
+    }
+}
