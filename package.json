@@ -1,6 +1,9 @@
 {
     "name": "@onivoro/server-puppeteer",
-    "version": "0.0.1",
+    "version": "0.0.8",
+    "repository": {
+        "url": "git+https://github.com/onivoro/server-puppeteer.git"
+    },
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/types/index.d.ts",
@@ -37,6 +40,7 @@
     },
     "dependencies": {
         "@nestjs/common": "^10.3.3",
+        "@onivoro/isomorphic-common": "^0.4.0",
         "@onivoro/server-common": "^0.0.23",
         "puppeteer": "^22.4.0",
         "puppeteer-core": "^22.4.0",

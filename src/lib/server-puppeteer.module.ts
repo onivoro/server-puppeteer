@@ -5,6 +5,7 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { ServerPuppeteerConfig } from './classes/server-puppeteer-config.class';
 import { PuppeteerService } from './services/puppeteer.service';
+import { launchBrowser } from '..';
 
 let browser: Browser | null = null;
 
@@ -22,8 +23,7 @@ export class ServerPuppeteerModule {
           provide: Browser,
           useFactory: async (options: ServerPuppeteerConfig) => {
             if (!browser) {
-              puppeteer.use(StealthPlugin())
-              browser = await puppeteer.launch(options);
+              browser = await launchBrowser(options);
             }
 
             return browser;

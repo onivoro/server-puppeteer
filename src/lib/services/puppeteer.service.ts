@@ -1,5 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { Browser, Page } from 'puppeteer';
+import { sleep } from '@onivoro/isomorphic-common';
 
 @Injectable()
 export class PuppeteerService {
@@ -21,7 +22,7 @@ export class PuppeteerService {
 
     protected async extractPageBody(url: string): Promise<string> {
         return await this.usePage(async page => {
-            await page.waitForTimeout((Math.floor(Math.random() * 10) + 2) * 1000);
+            await sleep((Math.floor(Math.random() * 10) + 2) * 1000)
             return await page.$eval('body', e => e.textContent);
         }, url);
     }
